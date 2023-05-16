@@ -1,5 +1,5 @@
 {
-  "name": "@allnftlab/onboarding-modal",
+  "name": "@allnftlab-ui/onboarding-modal",
   "version": "1.0.0",
   "description": "",
   "main": "./dist/index.js",
@@ -14,7 +14,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@allnftlab/eslint-config": "*",
+    "@allnftlab-ui/eslint-config": "*",
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
     "eslit": "^6.0.0",
