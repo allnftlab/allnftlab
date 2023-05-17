@@ -1,5 +1,9 @@
 import * as Dialog from '@radix-ui/react-dialog'
 
+export type OnboardingModalProps = {
+  mode: 'dark' | 'light'
+}
+
 const OnboardingModal = () => {
   return (
     <div className="flex h-screen items-center justify-center bg-black font-sans">
@@ -42,6 +46,7 @@ const OnboardingModal = () => {
                         href={'http://metamask.io'}
                         className="underline"
                         target="_blank"
+                        rel="noreferrer"
                       >
                         http://metamask.io
                       </a>
@@ -135,7 +140,8 @@ const OnboardingModal = () => {
           </Dialog.Content>
         </Dialog.Portal>
       </Dialog.Root>
-    </div>  )
+    </div>
+  )
 }
 
 export { OnboardingModal }
