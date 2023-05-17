@@ -15,7 +15,7 @@ const OnboardingModal = () => {
         </Dialog.Trigger>
         <Dialog.Portal>
           <Dialog.Overlay className="fixed inset-0" />
-          <Dialog.Content className="fixed left-[50%] top-[50%] flex h-[50rem] max-h-[90vh] w-[42rem] max-w-[662px] translate-x-[-50%] translate-y-[-50%] flex-col rounded-[6px] bg-[#151718] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px]">
+          <Dialog.Content className="fixed left-[50%] top-[50%] flex h-[50rem] max-h-[90vh] w-[95%] max-w-[662px] translate-x-[-50%] translate-y-[-50%] flex-col rounded-[6px] bg-[#151718] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px]">
             <header className="flex items-center justify-between rounded-t-[6px] border border-solid border-zinc-600 bg-zinc-900 p-5  text-white">
               <h2 className="text-xl text-slate-200">allnft&#x7b;lab&#x7d;</h2>
               <h3 className="text-base text-neutral-400">Passo a passo</h3>
