@@ -1,26 +1,35 @@
 import * as Dialog from '@radix-ui/react-dialog'
+import { useState } from 'react'
 
-const OnboardingModal = () => {
+interface OnboardingModalProps {
+  initialState: boolean
+}
+
+const OnboardingModal = ({ initialState }: OnboardingModalProps) => {
+  const [open, setOpen] = useState(initialState)
+
+  const handleOnOpenChange = (state: boolean) => {
+    setOpen(state)
+  }
+
   return (
-    <div className="flex h-screen items-center justify-center bg-black font-sans">
-      <Dialog.Root>
+    <div className="flex items-center justify-center font-sans">
+      <Dialog.Root open={open} onOpenChange={handleOnOpenChange}>
         <Dialog.Trigger asChild>
-          <button className="rounded-full border border-solid border-zinc-600 bg-zinc-900 px-3 py-1 text-2xl font-bold text-white">
+          <button className="rounded-full border border-solid border-zinc-600 bg-zinc-900 w-12 h-12 text-2xl font-bold text-white flex items-center justify-center">
             ?
           </button>
         </Dialog.Trigger>
         <Dialog.Portal>
-          <Dialog.Overlay className="fixed inset-0" />
-          <Dialog.Content className="fixed left-[50%] top-[50%] flex h-[50rem] max-h-[90vh] w-[42rem] max-w-[662px] translate-x-[-50%] translate-y-[-50%] flex-col rounded-[6px] bg-[#151718] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px]">
+          <Dialog.Overlay className="fixed inset-0 bg-zinc-950 backdrop-blur-xl opacity-50" />
+          <Dialog.Content className="fixed left-[50%] top-[50%] flex h-[50rem] max-h-[90vh] w-[95%] max-w-[662px] translate-x-[-50%] translate-y-[-50%] flex-col rounded-[6px] bg-[#151718] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px]">
             <header className="flex items-center justify-between rounded-t-[6px] border border-solid border-zinc-600 bg-zinc-900 p-5  text-white">
-              <h2 className="text-xl text-slate-200">allnft&#x7b;lab&#x7d;</h2>
+              <h2 className="text-xl text-zinc-200">allnft&#x7b;lab&#x7d;</h2>
               <h3 className="text-base text-neutral-400">Passo a passo</h3>
             </header>
             <section className="m-auto h-full w-full overflow-auto border-x border-solid border-zinc-600 px-5 pt-7">
               <div className="flex flex-col gap-3">
-                <h1 className="text-3xl text-slate-200">
-                  Aprenda como comprar
-                </h1>
+                <h1 className="text-3xl text-zinc-200">Aprenda como comprar</h1>
                 <p className="text-neutral-500">
                   O allnft&#x7b;lab&#x7d; criou um passo a passo para te ajudar
                   a colecionar seu token! Aqui está tudo que precisa saber para
@@ -33,7 +42,7 @@ const OnboardingModal = () => {
                     <div className="flex h-6 w-6 items-center justify-center rounded-md border border-solid border-zinc-600 bg-zinc-800">
                       <h3 className="text-base text-neutral-400">1</h3>
                     </div>
-                    <h2 className="text-lg text-slate-200">Criar carteira</h2>
+                    <h2 className="text-lg text-zinc-200">Criar carteira</h2>
                   </div>
                   <div>
                     <p className="text-neutral-500">
@@ -42,6 +51,7 @@ const OnboardingModal = () => {
                         href={'http://metamask.io'}
                         className="underline"
                         target="_blank"
+                        rel="noreferrer"
                       >
                         http://metamask.io
                       </a>
@@ -60,7 +70,7 @@ const OnboardingModal = () => {
                     <div className="flex h-6 w-6 items-center justify-center rounded-md border border-solid border-zinc-600 bg-zinc-800">
                       <h3 className="text-base text-neutral-400">2</h3>
                     </div>
-                    <h2 className="text-lg text-slate-200">
+                    <h2 className="text-lg text-zinc-200">
                       Conectar a carteira
                     </h2>
                   </div>
@@ -78,7 +88,7 @@ const OnboardingModal = () => {
                     <div className="flex h-6 w-6 items-center justify-center rounded-md border border-solid border-zinc-600 bg-zinc-800">
                       <h3 className="text-base text-neutral-400">3</h3>
                     </div>
-                    <h2 className="text-lg text-slate-200">Selecionar NFT</h2>
+                    <h2 className="text-lg text-zinc-200">Selecionar NFT</h2>
                   </div>
                   <div>
                     <p className="text-neutral-500">
@@ -93,9 +103,7 @@ const OnboardingModal = () => {
                     <div className="flex h-6 w-6 items-center justify-center rounded-md border border-solid border-zinc-600 bg-zinc-800">
                       <h3 className="text-base text-neutral-400">4</h3>
                     </div>
-                    <h2 className="text-lg text-slate-200">
-                      Cadastro da conta
-                    </h2>
+                    <h2 className="text-lg text-zinc-200">Cadastro da conta</h2>
                   </div>
                   <div>
                     <p className="text-neutral-500">
@@ -111,7 +119,7 @@ const OnboardingModal = () => {
                     <div className="flex h-6 w-6 items-center justify-center rounded-md border border-solid border-zinc-600 bg-zinc-800">
                       <h3 className="text-base text-neutral-400">5</h3>
                     </div>
-                    <h2 className="text-lg text-slate-200">
+                    <h2 className="text-lg text-zinc-200">
                       Realizar pagamento
                     </h2>
                   </div>
@@ -127,7 +135,7 @@ const OnboardingModal = () => {
             </section>
             <footer className="flex justify-end rounded-b-[6px] border border-solid border-zinc-600 bg-zinc-900 px-5 py-4">
               <Dialog.Close asChild>
-                <button className="rounded-lg border border-solid border-zinc-600 bg-[#242424] px-4 py-2 text-lg font-semibold text-slate-200 shadow-[0px_2px_1px_#000000cc]">
+                <button className="rounded-lg border border-solid border-zinc-600 bg-[#242424] px-4 py-2 text-lg font-semibold text-zinc-200 shadow-[0px_2px_1px_#000000cc]">
                   Continuar
                 </button>
               </Dialog.Close>
@@ -135,7 +143,9 @@ const OnboardingModal = () => {
           </Dialog.Content>
         </Dialog.Portal>
       </Dialog.Root>
-    </div>  )
+    </div>
+  )
 }
 
 export { OnboardingModal }
+export type { OnboardingModalProps }

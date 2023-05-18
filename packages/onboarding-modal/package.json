@@ -5,13 +5,16 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "files": ["dist"],
   "scripts": {
-    "build": "tsup src/index.ts --format esm,csj --dts --external react",
-    "dev": "tsup src/index.ts --format esm,cjs --dts --external react --watch ",
+    "build": "tsup src/index.ts --format esm,cjs --dts --external react --external tailwindcss && npm run build:tailwind",
+    "build:tailwind": "NODE_ENV=production npx tailwindcss -o ./dist/tailwind.css --minify",
+    "dev": "tsup src/index.ts --format esm,cjs --dts --external react --external tailwindcss --watch",
+    "dev:tailwind": "NODE_ENV=production TAILWIND_MODE=watch npx tailwindcss -o ./dist/tailwind.css --watch",
     "lint": "eslint src/**/*.ts* --fix"
   },
   "keywords": [],
-  "author": "",
+  "author": "Pedro Soares & Joao Vitor",
   "license": "MIT",
   "devDependencies": {
     "@allnftlab-ui/eslint-config": "*",
