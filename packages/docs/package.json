@@ -1,5 +1,5 @@
 {
-  "name": "@allnftlab-ui/docs",
+  "name": "@ignite-ui/docs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@storybook/addon-essentials": "^7.0.12",
     "@storybook/addon-interactions": "^7.0.12",
@@ -24,14 +24,12 @@
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.23",
     "prop-types": "^15.8.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "storybook": "^7.0.12",
-    "tailwindcss": "^3.3.2",
-    "vite": "^4.3.7"
+    "vite": "^4.3.8"
   },
   "dependencies": {
-    "@allnftlab-ui/eslint-config": "*",
-    "@allnftlab-ui/onboarding-modal": "*"
+    "@allnftlab-ui/onboarding-modal": "*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
