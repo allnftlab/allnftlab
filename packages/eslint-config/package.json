@@ -1,5 +1,5 @@
 {
-  "name": "@allnftlab-ui/eslint-config",
+  "name": "@allnftlab/eslint-config",
   "version": "1.0.0",
   "license": "MIT",
   "private": true,

@@ -1,1 +1,1 @@
-export { OnboardingModal } from "./components/OnboardingModal"
+export { OnboardingModal } from './components/OnboardingModal'
