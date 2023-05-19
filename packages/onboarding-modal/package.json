@@ -1,7 +1,6 @@
 {
-  "name": "@allnftlab-ui/onboarding-modal",
+  "name": "@allnftlab/onboarding-modal",
   "version": "1.0.0",
-  "description": "",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -11,7 +10,11 @@
     "lint": "eslint src/**/*.ts* --fix"
   },
   "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/allnftlab/allnftlab-ui.git"
+  },
+  "author": "Joao Vitor",
   "license": "MIT",
   "devDependencies": {
     "@allnftlab-ui/eslint-config": "*",
@@ -25,5 +28,6 @@
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.3"
-  }
+  },
+  "description": ""
 }
