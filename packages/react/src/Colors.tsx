@@ -1,5 +1,7 @@
 import { cva } from 'class-variance-authority'
 
+// Color scheme to translate colors from Zico project to tailwind
+
 export const Colors = cva('colors', {
   variants: {
     tailwindNeutral: {

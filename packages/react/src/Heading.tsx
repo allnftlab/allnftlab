@@ -1,8 +1,7 @@
 import { cva, type VariantProps } from 'class-variance-authority'
 import React from 'react'
-import cs from 'classnames'
 
-export const Headings = cva('title', {
+export const Headings = cva('m-0text-neutral-100font-semibold', {
   variants: {
     size: {
       xs: ['text-base', 'leading-normal', 'md:text-lg', 'md:leading-normal'],
@@ -40,14 +39,4 @@ export const Heading: React.FC<TitleProps> = ({
   className,
   size,
   ...props
-}) => (
-  <h2
-    className={cs(
-      'm-0',
-      'text-neutral-100',
-      'font-semibold',
-      Headings({ size, className }),
-    )}
-    {...props}
-  />
-)
+}) => <h2 className={Headings({ size, className })} {...props} />

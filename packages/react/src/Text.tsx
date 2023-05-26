@@ -1,8 +1,7 @@
 import { cva, type VariantProps } from 'class-variance-authority'
 import React from 'react'
-import cs from 'classnames'
 
-const Texts = cva('text', {
+const Texts = cva('m-0 whitespace-pre-wrap font-normal text-neutral-100', {
   variants: {
     size: {
       xs: ['text-xs', 'leading-relaxed', 'tracking-[0.045em]'],
@@ -43,14 +42,5 @@ export interface TextProps
     VariantProps<typeof Texts> {}
 
 export const Text: React.FC<TextProps> = ({ className, size, ...props }) => (
-  <p
-    className={cs(
-      'm-0',
-      'whitespace-pre-wrap',
-      'font-normal',
-      'text-neutral-100',
-      Texts({ size, className }),
-    )}
-    {...props}
-  />
+  <p className={Texts({ size, className })} {...props} />
 )
