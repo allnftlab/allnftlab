@@ -2,16 +2,16 @@ import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 
-import { Button } from '@/components/shared/Button'
-import { Heading } from '@/components/shared/Heading'
-import { Text } from '@/components/shared/Text'
+import { Button } from '../../../react/src/Button'
+import { Heading } from '../../../react/src/Heading'
+import { Text } from '../../../react/src/Text'
 import { Flex } from '@/components/shared/Flex'
-import { Input } from '@/components/shared/Input'
+import { Input } from '../../../react/src/Input'
 
 import { Header, Form, InputBlock, Footer } from './styles'
 import { log } from '@/utils/log'
 import { Loader } from '@/pages/teaser/components/NewsletterForm/styles'
-import { InputError } from '@/components/shared/InputError'
+import { InputError } from '../../../react/src/InputError'
 
 const VerificationFormValuesSchema = z.object({
   confirmation_code: z.string().length(6),

@@ -1,5 +1,5 @@
 import { checkout } from '@/assets/i18n/pages/checkout'
-import { Text } from '@/components/Tailwind/Text'
+import { Text } from '../../../react/src/Text'
 import { CheckedState, Root, Indicator } from '@radix-ui/react-checkbox'
 import { useState } from 'react'
 import cs from 'classnames'

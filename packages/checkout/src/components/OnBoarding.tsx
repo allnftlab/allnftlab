@@ -1,6 +1,6 @@
-import { Button } from '@/components/shared/Button'
-import { Heading } from '@/components/shared/Heading'
-import { Text } from '@/components/shared/Text'
+import { Button } from '../../../react/src/Button'
+import { Heading } from '../../../react/src/Heading'
+import { Text } from '../../../react/src/Text'
 
 interface OnboardingProps {
   content?: any

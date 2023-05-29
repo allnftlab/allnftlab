@@ -3,7 +3,7 @@ import { Button } from '../../../react/src/Button'
 import { Heading } from '../../../react/src/Heading'
 import { Text } from '../../../react/src/Text'
 
-import { Tooltip } from './TODO/Summary/Item/Tooltip'
+import { Tooltip } from './TODO/Summary/Item/Tooltip/ToolTip'
 import { Item as ItemType, useCheckout } from '@/stores/checkout'
 
 interface ItemProps {

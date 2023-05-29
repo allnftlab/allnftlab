@@ -1,8 +1,8 @@
 import { CheckIcon, CopyIcon, Cross2Icon } from '@radix-ui/react-icons'
 
-import { Button } from '@/components/Tailwind/Button'
-import { Heading } from '@/components/shared/Heading'
-import { Text } from '@/components/shared/Text'
+import { Button } from '../../../react/src/Button'
+import { Heading } from '../../../react/src/Heading'
+import { Text } from '../../../react/src/Text'
 import { Spinner } from './Spinner'
 
 import { usePix } from '@/stores/pix'
@@ -15,16 +15,14 @@ interface PixProps {
 }
 
 const Pix = ({ status = 'pending' }: PixProps) => {
-  const { qr_code, qr_code_url, expires_at, amount } = usePix(
-    (state) => state.pix,
-  )
+  const { qrCode, qrCodeUrl, expiresAt, amount } = usePix((state) => state.pix)
 
   const handleClickOnPixCopiaECola = () => {
-    navigator.clipboard.writeText(qr_code)
+    navigator.clipboard.writeText(qrCode)
   }
 
   const remainingTime = useMemo(() => {
-    const expirationDate = new Date(expires_at)
+    const expirationDate = new Date(expiresAt)
     const currentDate = new Date()
 
     const secondsRemaining = Math.floor(
@@ -35,7 +33,7 @@ const Pix = ({ status = 'pending' }: PixProps) => {
     const seconds = String(secondsRemaining % 60)
 
     return `${minutes.padStart(2, '0')}:${seconds.padStart(2, '0')}`
-  }, [expires_at])
+  }, [expiresAt])
 
   const total = priceFormatter.format(amount / 100)
 
@@ -63,7 +61,7 @@ const Pix = ({ status = 'pending' }: PixProps) => {
         </Text>
 
         <Image
-          src={qr_code_url}
+          src={qrCodeUrl}
           alt="QR code"
           className="h-[263px] w-[270px] rounded-sm bg-neutral-500 object-contain p-4"
         />
@@ -86,7 +84,7 @@ const Pix = ({ status = 'pending' }: PixProps) => {
             </Button>
 
             <Text className="line-clamp-2 max-h-[4ch] max-w-[20ch] text-ellipsis font-semibold text-neutral-500">
-              {qr_code ?? ''}
+              {qrCode ?? ''}
             </Text>
           </div>
         </div>

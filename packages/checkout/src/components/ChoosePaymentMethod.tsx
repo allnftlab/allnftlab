@@ -4,9 +4,9 @@ import { useAccount, useContractWrite, usePrepareContractWrite } from 'wagmi'
 import { BigNumber, ethers } from 'ethers'
 
 import { checkout } from '@/assets/i18n/pages/checkout'
-import { Button } from '@/components/Tailwind/Button'
-import { Heading } from '@/components/shared/Heading'
-import { Text } from '@/components/shared/Text'
+import { Button } from '../../../react/src/Button'
+import { Heading } from '../../../react/src/Heading'
+import { Text } from '../../../react/src/Text'
 import { useCheckout } from '@/stores/checkout'
 import { usePix } from '@/stores/pix'
 
