@@ -11,8 +11,7 @@ const Tooltip = () => {
         </ReactTooltip.Trigger>
         <ReactTooltip.Portal>
           <ReactTooltip.Content
-            // Pendência: falta implementar animações
-            className="select-none rounded-sm border border-solid border-neutral-200 bg-neutral-100 px-3 py-2 text-base"
+            className="offset select-none rounded-sm border border-solid border-neutral-200 bg-neutral-100 px-3 py-2 text-base data-[state=delayed-open]:data-[side=bottom]:animate-slideUpAndFade data-[state=delayed-open]:data-[side=left]:animate-slideRightAndFade data-[state=delayed-open]:data-[side=right]:animate-slideLeftAndFade data-[state=delayed-open]:data-[side=top]:animate-slideDownAndFade "
             sideOffset={5}
           >
             You can only get 2 of this NFT
