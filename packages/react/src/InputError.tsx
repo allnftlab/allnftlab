@@ -13,7 +13,3 @@ export const InputError: React.FC<InputErrorProps> = ({
   className,
   ...props
 }) => <span className={InputErrorStyled({ className })} {...props} />
-
-// export const InputError = () => (
-//   <span className="text-red-300 m-0 whitespace-pre-wrap font-normal" />
-// )

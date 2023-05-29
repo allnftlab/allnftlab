@@ -5,7 +5,6 @@ const Tooltip = () => {
     <ReactTooltip.Provider>
       <ReactTooltip.Root>
         <ReactTooltip.Trigger asChild>
-          {/* Pendência: faltou box shadow do button */}
           <button className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-solid border-neutral-200 bg-neutral-100 hover:bg-transparent">
             !
           </button>

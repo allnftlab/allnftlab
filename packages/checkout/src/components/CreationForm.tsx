@@ -192,10 +192,10 @@ const CreationForm = ({ content, onSubmit }: CreationProps) => {
         </div>
       </div>
 
-      <footer className="w-full pt-5 gap-4 flex items-center justify-end border-t border-solid border-neutral-200">
+      <footer className="flex w-full items-center justify-end gap-4 border-t border-solid border-neutral-200 pt-5">
         <Button type="submit" variant="secondary" disabled={isSubmitting}>
           {isSubmitting ? (
-            <span className="relative w-2 h-2 rounded-[50%] bg-white shadow-[16px_0_#fff,_-16px_0_#fff] animate-[flash_0.5s_ease-out_infinite_alternate]" />
+            <span className="relative h-2 w-2 animate-[flash_0.5s_ease-out_infinite_alternate] rounded-[50%] bg-white shadow-[16px_0_#fff,_-16px_0_#fff]" />
           ) : (
             content?.btn_proceed?.cta ?? ''
           )}

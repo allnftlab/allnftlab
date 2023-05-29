@@ -1,3 +1,6 @@
 {
-    "extends": "@allnftlab-ui/eslint-config"
+    "extends": "@allnftlab-ui/eslint-config",
+    "rules": {
+        "camelcase": "off"
+    }
 }

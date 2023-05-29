@@ -15,14 +15,16 @@ interface PixProps {
 }
 
 const Pix = ({ status = 'pending' }: PixProps) => {
-  const { qrCode, qrCodeUrl, expiresAt, amount } = usePix((state) => state.pix)
+  const { qr_code, qr_code_url, expires_at, amount } = usePix(
+    (state) => state.pix,
+  )
 
   const handleClickOnPixCopiaECola = () => {
-    navigator.clipboard.writeText(qrCode)
+    navigator.clipboard.writeText(qr_code)
   }
 
   const remainingTime = useMemo(() => {
-    const expirationDate = new Date(expiresAt)
+    const expirationDate = new Date(expires_at)
     const currentDate = new Date()
 
     const secondsRemaining = Math.floor(
@@ -33,7 +35,7 @@ const Pix = ({ status = 'pending' }: PixProps) => {
     const seconds = String(secondsRemaining % 60)
 
     return `${minutes.padStart(2, '0')}:${seconds.padStart(2, '0')}`
-  }, [expiresAt])
+  }, [expires_at])
 
   const total = priceFormatter.format(amount / 100)
 
@@ -61,7 +63,7 @@ const Pix = ({ status = 'pending' }: PixProps) => {
         </Text>
 
         <Image
-          src={qrCodeUrl}
+          src={qr_code_url}
           alt="QR code"
           className="h-[263px] w-[270px] rounded-sm bg-neutral-500 object-contain p-4"
         />
@@ -84,7 +86,7 @@ const Pix = ({ status = 'pending' }: PixProps) => {
             </Button>
 
             <Text className="line-clamp-2 max-h-[4ch] max-w-[20ch] text-ellipsis font-semibold text-neutral-500">
-              {qrCode ?? ''}
+              {qr_code ?? ''}
             </Text>
           </div>
         </div>
