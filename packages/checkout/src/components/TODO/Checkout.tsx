@@ -3,15 +3,16 @@ import { useState } from 'react'
 
 import { i18n } from '@/assets/i18n'
 
-import { SelectProduct } from './components/SelectProduct'
-import { Summary } from './components/Summary'
-import { Register } from './components/Register'
+import { SelectProduct } from '../SelectProduct'
+import { Summary } from '../Summary'
+import { Register } from '../Register'
+
+// Pendência de implementação
 import { getCheckoutLayout } from '@/components/layout/Checkout'
 import { Meta } from '@/components/shared/Meta'
 
-import { Container } from './styles'
-import { Pix } from './Tailwind/Pix'
-import { ChoosePaymentMethod } from './Tailwind/ChoosePaymentMethod'
+import { Pix } from '../Pix'
+import { ChoosePaymentMethod } from '../ChoosePaymentMethod'
 
 enum StagesEnum {
   SELECT,
@@ -49,7 +50,7 @@ export default function CheckoutPage({ content }: ICheckoutProps) {
     <>
       <Meta {...metadata} />
 
-      <Container direction="column">
+      <div className="flex flex-col w-full max-w-[920px] p-4 mx-auto gap-8 pt-12 pb-40">
         {/* <Onboarding content={content.onboarding} /> */}
         {stage >= StagesEnum.REGISTER && <Summary content={content.summary} />}
 
@@ -72,7 +73,7 @@ export default function CheckoutPage({ content }: ICheckoutProps) {
         )}
 
         {stage === StagesEnum.PIX && <Pix />}
-      </Container>
+      </div>
     </>
   )
 }

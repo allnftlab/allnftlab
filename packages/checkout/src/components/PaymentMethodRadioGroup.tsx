@@ -1,8 +1,8 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import * as RadioGroup from '@radix-ui/react-radio-group'
 
 import { checkout } from '@/assets/i18n/pages/checkout'
-import { Text } from '@/components/shared/Text'
+import { Text } from '../../../react/src/Text'
 
 import { PaymentMethodsEnum } from './ChoosePaymentMethod'
 

@@ -1,19 +1,15 @@
-/* eslint-disable no-unused-vars */
 import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 
-import { Button } from '../../../../../../react/src/Button'
-import { Heading } from '../../../../../../react/src/Heading'
-import { Text } from '../../../../../../react/src/Text'
-import { Flex } from '../../../../../../react/src/Flex'
-import { Input } from '../../../../../../react/src/Input'
+import { Button } from '../../../react/src/Button'
+import { Heading } from '../../../react/src/Heading'
+import { Text } from '../../../react/src/Text'
+import { Input } from '../../../react/src/Input'
+import { InputError } from '../../../react/src/InputError'
 
-import { Header, Form, InputBlock, Footer } from './styles'
 import { log } from '@/utils/log'
 import { useCheckout } from '@/stores/checkout'
-import { Loader } from '@/pages/teaser/components/NewsletterForm/styles'
-import { InputError } from '../../../../../../react/src/InputError'
 
 const creationFormValuesSchema = z.object({
   name: z.string().min(3),
@@ -92,11 +88,7 @@ const CreationForm = ({ content, onSubmit }: CreationProps) => {
                 id={inputs.name.name}
                 status={errors.name ? 'error' : 'default'}
               />
-              {errors.name && (
-                <InputError as="span" size="xs">
-                  {errors.name.message}
-                </InputError>
-              )}
+              {errors.name && <InputError>{errors.name.message}</InputError>}
             </div>
             <div className="w-full !flex-col !items-start gap-1 text-neutral-500">
               <label
@@ -110,11 +102,7 @@ const CreationForm = ({ content, onSubmit }: CreationProps) => {
                 id={inputs.phone.name}
                 status={errors.phone ? 'error' : 'default'}
               />
-              {errors.phone && (
-                <InputError as="span" size="xs">
-                  {errors.phone.message}
-                </InputError>
-              )}
+              {errors.phone && <InputError>{errors.phone.message}</InputError>}
             </div>
           </div>
 
@@ -130,11 +118,7 @@ const CreationForm = ({ content, onSubmit }: CreationProps) => {
               id={inputs.email.name}
               status={errors.email ? 'error' : 'default'}
             />
-            {errors.email && (
-              <InputError as="span" size="xs">
-                {errors.email.message}
-              </InputError>
-            )}
+            {errors.email && <InputError>{errors.email.message}</InputError>}
           </div>
           <div className="flex gap-6">
             <div className="w-full !flex-col !items-start gap-1 text-neutral-500">
@@ -150,9 +134,7 @@ const CreationForm = ({ content, onSubmit }: CreationProps) => {
                 status={errors.country ? 'error' : 'default'}
               />
               {errors.country && (
-                <InputError as="span" size="xs">
-                  {errors.country.message}
-                </InputError>
+                <InputError>{errors.country.message}</InputError>
               )}
             </div>
 
@@ -169,9 +151,7 @@ const CreationForm = ({ content, onSubmit }: CreationProps) => {
                 status={errors.tax_id ? 'error' : 'default'}
               />
               {errors.tax_id && (
-                <InputError as="span" size="xs">
-                  {errors.tax_id.message}
-                </InputError>
+                <InputError>{errors.tax_id.message}</InputError>
               )}
             </div>
           </div>
@@ -189,9 +169,7 @@ const CreationForm = ({ content, onSubmit }: CreationProps) => {
                 status={errors.address ? 'error' : 'default'}
               />
               {errors.address && (
-                <InputError as="span" size="xs">
-                  {errors.address.message}
-                </InputError>
+                <InputError>{errors.address.message}</InputError>
               )}
             </div>
             <div className="w-full !flex-col !items-start gap-1 text-neutral-500">
@@ -207,21 +185,22 @@ const CreationForm = ({ content, onSubmit }: CreationProps) => {
                 status={errors.zip_code ? 'error' : 'default'}
               />
               {errors.zip_code && (
-                <InputError as="span" size="xs">
-                  {' '}
-                  {errors.zip_code.message}
-                </InputError>
+                <InputError> {errors.zip_code.message}</InputError>
               )}
             </div>
           </div>
         </div>
       </div>
 
-      <Footer>
+      <footer className="w-full pt-5 gap-4 flex items-center justify-end border-t border-solid border-neutral-200">
         <Button type="submit" variant="secondary" disabled={isSubmitting}>
-          {isSubmitting ? <Loader /> : content?.btn_proceed?.cta ?? ''}
+          {isSubmitting ? (
+            <span className="relative w-2 h-2 rounded-[50%] bg-white shadow-[16px_0_#fff,_-16px_0_#fff] animate-[flash_0.5s_ease-out_infinite_alternate]" />
+          ) : (
+            content?.btn_proceed?.cta ?? ''
+          )}
         </Button>
-      </Footer>
+      </footer>
     </form>
   )
 }
