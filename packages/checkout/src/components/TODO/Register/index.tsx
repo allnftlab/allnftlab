@@ -1,6 +1,5 @@
 import { useState } from 'react'
 
-import { Container } from './styles'
 import { CreationForm } from './CreationForm'
 import { VerificationForm } from './VerificationForm'
 
@@ -30,7 +29,7 @@ const Register = ({ content, onRegisterEnd = () => {} }: RegisterProps) => {
   }
 
   return (
-    <Container as="section">
+    <section className="w-full rounded-md border border-solid border-neutral-200 bg-neutral-50 p-5">
       {step === RegistrationStep.CREATION && (
         <CreationForm
           content={content.creation}
@@ -44,7 +43,7 @@ const Register = ({ content, onRegisterEnd = () => {} }: RegisterProps) => {
           onGoBack={onGoBack}
         />
       )}
-    </Container>
+    </section>
   )
 }
 

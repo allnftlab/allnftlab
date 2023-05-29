@@ -3,17 +3,17 @@ import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 
-import { Button } from '@/components/shared/Button'
-import { Heading } from '@/components/shared/Heading'
-import { Text } from '@/components/shared/Text'
-import { Flex } from '@/components/shared/Flex'
-import { Input } from '@/components/shared/Input'
+import { Button } from '../../../../../../react/src/Button'
+import { Heading } from '../../../../../../react/src/Heading'
+import { Text } from '../../../../../../react/src/Text'
+import { Flex } from '../../../../../../react/src/Flex'
+import { Input } from '../../../../../../react/src/Input'
 
 import { Header, Form, InputBlock, Footer } from './styles'
 import { log } from '@/utils/log'
 import { useCheckout } from '@/stores/checkout'
 import { Loader } from '@/pages/teaser/components/NewsletterForm/styles'
-import { InputError } from '@/components/shared/InputError'
+import { InputError } from '../../../../../../react/src/InputError'
 
 const creationFormValuesSchema = z.object({
   name: z.string().min(3),
@@ -65,23 +65,28 @@ const CreationForm = ({ content, onSubmit }: CreationProps) => {
   console.log(errors)
 
   return (
-    <form onSubmit={handleSubmit(createUser)}>
-      <Flex css={{ alignItems: 'flex-start', gap: '$12' }}>
-        <Header direction="column">
-          <Heading as="h1" size="lg">
-            {content?.title ?? ''}
-          </Heading>
+    <form className="flex flex-col gap-8" onSubmit={handleSubmit(createUser)}>
+      <div className="flex items-start gap-12">
+        <div className="flex w-[35%] flex-col gap-3">
+          <Heading size="lg">{content?.title ?? ''}</Heading>
 
-          <Text>{content?.text ?? ''}</Text>
-          <Text>{content?.annotation ?? ''}</Text>
-        </Header>
+          <Text className="loose font-semibold text-neutral-500">
+            {content?.text ?? ''}
+          </Text>
+          <Text className="loose text-neutral-500">
+            {content?.annotation ?? ''}
+          </Text>
+        </div>
 
-        <Form as="div">
-          <Flex>
-            <InputBlock>
-              <Text size="sm" as="label" htmlFor={inputs.name.name}>
+        <div className="flex flex-1 flex-col gap-2">
+          <div className="flex gap-6">
+            <div className="w-full !flex-col !items-start gap-1 text-neutral-500">
+              <label
+                className="text-sm leading-relaxed tracking-[0.045em]"
+                htmlFor={inputs.name.name}
+              >
                 {inputs.name.label}
-              </Text>
+              </label>
               <Input
                 {...register(inputs.name.name)}
                 id={inputs.name.name}
@@ -92,11 +97,14 @@ const CreationForm = ({ content, onSubmit }: CreationProps) => {
                   {errors.name.message}
                 </InputError>
               )}
-            </InputBlock>
-            <InputBlock>
-              <Text size="sm" as="label" htmlFor={inputs.phone.name}>
+            </div>
+            <div className="w-full !flex-col !items-start gap-1 text-neutral-500">
+              <label
+                className="text-sm leading-relaxed tracking-[0.045em]"
+                htmlFor={inputs.phone.name}
+              >
                 {inputs.phone.label}
-              </Text>
+              </label>
               <Input
                 {...register(inputs.phone.name)}
                 id={inputs.phone.name}
@@ -107,13 +115,16 @@ const CreationForm = ({ content, onSubmit }: CreationProps) => {
                   {errors.phone.message}
                 </InputError>
               )}
-            </InputBlock>
-          </Flex>
+            </div>
+          </div>
 
-          <InputBlock>
-            <Text size="sm" as="label" htmlFor={inputs.email.name}>
+          <div className="w-full !flex-col !items-start gap-1 text-neutral-500">
+            <label
+              className="text-sm leading-relaxed tracking-[0.045em]"
+              htmlFor={inputs.email.name}
+            >
               {inputs.email.label}
-            </Text>
+            </label>
             <Input
               {...register(inputs.email.name)}
               id={inputs.email.name}
@@ -124,12 +135,15 @@ const CreationForm = ({ content, onSubmit }: CreationProps) => {
                 {errors.email.message}
               </InputError>
             )}
-          </InputBlock>
-          <Flex>
-            <InputBlock>
-              <Text size="sm" as="label" htmlFor={inputs.country.name}>
+          </div>
+          <div className="flex gap-6">
+            <div className="w-full !flex-col !items-start gap-1 text-neutral-500">
+              <label
+                className="text-sm leading-relaxed tracking-[0.045em]"
+                htmlFor={inputs.country.name}
+              >
                 {inputs.country.label}
-              </Text>
+              </label>
               <Input
                 {...register(inputs.country.name)}
                 id={inputs.country.name}
@@ -140,12 +154,15 @@ const CreationForm = ({ content, onSubmit }: CreationProps) => {
                   {errors.country.message}
                 </InputError>
               )}
-            </InputBlock>
+            </div>
 
-            <InputBlock>
-              <Text size="sm" as="label" htmlFor={inputs.tax_id.name}>
+            <div className="w-full !flex-col !items-start gap-1 text-neutral-500">
+              <label
+                className="text-sm leading-relaxed tracking-[0.045em]"
+                htmlFor={inputs.tax_id.name}
+              >
                 {inputs.tax_id.label}
-              </Text>
+              </label>
               <Input
                 {...register(inputs.tax_id.name)}
                 id={inputs.tax_id.name}
@@ -156,13 +173,16 @@ const CreationForm = ({ content, onSubmit }: CreationProps) => {
                   {errors.tax_id.message}
                 </InputError>
               )}
-            </InputBlock>
-          </Flex>
-          <Flex>
-            <InputBlock>
-              <Text size="sm" as="label" htmlFor={inputs.address.name}>
+            </div>
+          </div>
+          <div className="flex gap-6">
+            <div className="w-full !flex-col !items-start gap-1 text-neutral-500">
+              <label
+                className="text-sm leading-relaxed tracking-[0.045em]"
+                htmlFor={inputs.address.name}
+              >
                 {inputs.address.label}
-              </Text>
+              </label>
               <Input
                 {...register(inputs.address.name)}
                 id={inputs.address.name}
@@ -173,11 +193,14 @@ const CreationForm = ({ content, onSubmit }: CreationProps) => {
                   {errors.address.message}
                 </InputError>
               )}
-            </InputBlock>
-            <InputBlock>
-              <Text size="sm" as="label" htmlFor={inputs.zip_code.name}>
+            </div>
+            <div className="w-full !flex-col !items-start gap-1 text-neutral-500">
+              <label
+                className="text-sm leading-relaxed tracking-[0.045em]"
+                htmlFor={inputs.zip_code.name}
+              >
                 {inputs.zip_code.label}
-              </Text>
+              </label>
               <Input
                 {...register(inputs.zip_code.name)}
                 id={inputs.zip_code.name}
@@ -189,10 +212,10 @@ const CreationForm = ({ content, onSubmit }: CreationProps) => {
                   {errors.zip_code.message}
                 </InputError>
               )}
-            </InputBlock>
-          </Flex>
-        </Form>
-      </Flex>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <Footer>
         <Button type="submit" variant="secondary" disabled={isSubmitting}>
