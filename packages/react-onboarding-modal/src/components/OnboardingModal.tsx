@@ -16,12 +16,12 @@ const OnboardingModal = ({ initialState }: OnboardingModalProps) => {
     <div className="flex items-center justify-center font-sans">
       <Dialog.Root open={open} onOpenChange={handleOnOpenChange}>
         <Dialog.Trigger asChild>
-          <button className="rounded-full border border-solid border-zinc-600 bg-zinc-900 w-12 h-12 text-2xl font-bold text-white flex items-center justify-center">
+          <button className="flex h-12 w-12 items-center justify-center rounded-full border border-solid border-zinc-600 bg-zinc-900 text-2xl font-bold text-white">
             ?
           </button>
         </Dialog.Trigger>
         <Dialog.Portal>
-          <Dialog.Overlay className="fixed inset-0 bg-zinc-950 backdrop-blur-xl opacity-50" />
+          <Dialog.Overlay className="fixed inset-0 bg-zinc-950 opacity-50 backdrop-blur-xl" />
           <Dialog.Content className="fixed left-[50%] top-[50%] flex h-[50rem] max-h-[90vh] w-[95%] max-w-[662px] translate-x-[-50%] translate-y-[-50%] flex-col rounded-[6px] bg-[#151718] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px]">
             <header className="flex items-center justify-between rounded-t-[6px] border border-solid border-zinc-600 bg-zinc-900 p-5  text-white">
               <h2 className="text-xl text-zinc-200">allnft&#x7b;lab&#x7d;</h2>

@@ -1,5 +1,5 @@
 {
-  "name": "@allnftlab/react",
+  "name": "@allnftlab/react-checkout",
   "version": "1.0.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -21,18 +21,36 @@
   "license": "MIT",
   "devDependencies": {
     "@allnftlab-ui/eslint-config": "*",
-    "@types/react": "^18.2.6",
-    "@types/react-dom": "^18.2.4",
-    "eslit": "^6.0.0",
-    "react": "^18.2.0",
-    "tailwindcss": "^3.3.2",
-    "tsup": "^6.7.0",
-    "typescript": "^5.0.4"
+    "@allnftlab-ui/ts-config": "*",
+    "@types/styled-components": "^5.1.26",
+    "autoprefixer": "^10.4.14",
+    "lint": "^0.8.19",
+    "postcss": "^8.4.23",
+    "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.3.0",
+    "tailwindcss": "^3.3.2"
   },
   "dependencies": {
+    "@radix-ui/react-checkbox": "^1.0.3",
     "@radix-ui/react-dialog": "^1.0.3",
+    "@radix-ui/react-icons": "^1.3.0",
+    "@radix-ui/react-radio-group": "^1.1.2",
+    "@types/node": "18.15.12",
+    "@types/react": "18.0.37",
+    "@types/react-dom": "18.0.11",
     "class-variance-authority": "^0.6.0",
-    "classnames": "^2.3.2"
+    "classnames": "^2.3.2",
+    "connectkit": "^1.2.3",
+    "eslint": "8.38.0",
+    "eslint-config-next": "13.3.0",
+    "ethers": "^5.7.2",
+    "next": "13.3.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sharp": "^0.32.1",
+    "styled-components": "^5.3.10",
+    "typescript": "5.0.4",
+    "wagmi": "^0.12.12"
   },
   "description": ""
 }
