@@ -1,0 +1,40 @@
+{
+  "name": "@allnftlab/react-onboarding-modal",
+  "version": "1.0.1",
+  "author": "Pedro Soares & João Vitor",
+  "description": "",
+  "keywords": [],
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --external react --external tailwindcss && npm run build:tailwind",
+    "build:tailwind": "NODE_ENV=production npx tailwindcss -o ./dist/tailwind.css --minify",
+    "dev": "tsup src/index.ts --format esm,cjs --dts --external react --external tailwindcss --watch",
+    "dev:tailwind": "NODE_ENV=production TAILWIND_MODE=watch npx tailwindcss -o ./dist/tailwind.css --watch",
+    "lint": "eslint src/**/*.ts* --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/allnftlab/allnftlab-ui.git"
+  },
+  "publishConfig": {
+    "@allnftlab:registry": "https://npm.pkg.github.com"
+  },
+  "devDependencies": {
+    "@allnftlab-ui/eslint-config": "*",
+    "@allnftlab-ui/ts-config": "*",
+    "@types/react": "^18.2.6",
+    "@types/react-dom": "^18.2.4",
+    "eslit": "^6.0.0",
+    "react": "^18.2.0",
+    "tailwindcss": "^3.3.2",
+    "tsup": "^6.7.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@radix-ui/react-dialog": "^1.0.3"
+  }
+}

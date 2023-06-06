@@ -1,0 +1,6 @@
+{
+  "extends": "@allnftlab-ui/ts-config/react",
+  "include": [
+    "src",
+  ],
+}
