@@ -1,6 +1,10 @@
 {
   "name": "@allnftlab/react-onboarding-modal",
   "version": "1.0.1",
+  "author": "Pedro Soares & João Vitor",
+  "description": "",
+  "keywords": [],
+  "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -12,13 +16,13 @@
     "dev:tailwind": "NODE_ENV=production TAILWIND_MODE=watch npx tailwindcss -o ./dist/tailwind.css --watch",
     "lint": "eslint src/**/*.ts* --fix"
   },
-  "keywords": [],
   "repository": {
     "type": "git",
     "url": "https://github.com/allnftlab/allnftlab-ui.git"
   },
-  "author": "Pedro Soares & Joao Vitor",
-  "license": "MIT",
+  "publishConfig": {
+    "@allnftlab:registry": "https://npm.pkg.github.com"
+  },
   "devDependencies": {
     "@allnftlab-ui/eslint-config": "*",
     "@allnftlab-ui/ts-config": "*",
@@ -32,6 +36,5 @@
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.3"
-  },
-  "description": ""
+  }
 }

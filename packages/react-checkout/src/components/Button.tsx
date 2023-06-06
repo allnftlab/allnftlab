@@ -1,5 +1,5 @@
 import { cva, type VariantProps } from 'class-variance-authority'
-import React from 'react'
+import { ButtonHTMLAttributes } from 'react'
 
 const StyledButton = cva(
   'rounded-md text-lg leading-none font-bold text-center min-w-[120px] w-fit box-border px-3 py-5 shadow-[0_3px_6px_#262626,_0_2px_4px_#1f1f1f] flex items-center justify-center gap-2 border-2 border-solid border-neutral-200 [&>svg]:w-4 [&>svg]:h-4 disabled:cursor-not-allowed focus:outline-2 focus:outline focus:outline-neutral-500 focus:outline-offset-2',
@@ -78,14 +78,9 @@ const StyledButton = cva(
 )
 
 export interface ButtonProps
-  extends React.HTMLAttributes<HTMLButtonElement>,
+  extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof StyledButton> {}
 
-export const Button: React.FC<ButtonProps> = ({
-  className,
-  size,
-  variant,
-  ...props
-}) => (
+export const Button = ({ className, size, variant, ...props }: ButtonProps) => (
   <button className={StyledButton({ size, variant, className })} {...props} />
 )

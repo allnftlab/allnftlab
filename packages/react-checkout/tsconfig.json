@@ -1,5 +1,3 @@
 {
-  "extends": [
-    "@allnftlab-ui/ts-config/react"
-  ]
+  "extends": "@allnftlab-ui/ts-config/react"
 }
